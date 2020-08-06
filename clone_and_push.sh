@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # location of bundles
-BUNDLE_DIR="$HOME/projects/zips/initial-bundles"
+BUNDLE_DIR="$HOME/projects/zips"
 
 # ssh remote for internal git server to push
 REMOTE=git@hpcgitlab.hpc.inl.gov:`whoami` 

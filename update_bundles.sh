@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # location for bundles
-BUNDLE_DIR="$HOME/projects/zips/updated-bundles"
+BUNDLE_DIR="$HOME/projects/zips"
 rm -vf $BUNDLE_DIR/*.bundle  # clean old bundles
 
-cd moose
 # remember where we were last time
+cd moose
 git checkout master
 git reset --hard lastbundle
 git submodule update --init --recursive libmesh
@@ -48,5 +48,6 @@ dir=$BUNDLE_DIR git submodule foreach --recursive '
       fi 
       echo "writing $bundle...";
       git bundle create $bundle lastbundle..master master HEAD $extrabranch;
+      echo;
     fi;
   fi'
