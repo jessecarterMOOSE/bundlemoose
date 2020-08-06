@@ -22,7 +22,6 @@ cd libmesh
 git submodule init
 for sub in `git submodule status | cut -c2- | cut -d " " -f 2`  # loop over submodules of libmesh
 do
-  echo $sub
   name=`basename $sub`
   git config --local submodule.$sub.url $REMOTE/$name.git
 done
@@ -32,12 +31,10 @@ git submodule update
 wd=$PWD
 for libmeshsub in `git submodule status | cut -c2- | cut -d " " -f 2`
 do
-  echo $libmeshsub
   cd $libmeshsub
   git submodule init
   for sub in `git submodule status | cut -c2- | cut -d " " -f 2`
   do
-    echo $sub
     name=`basename $sub`
     git config --local submodule.$sub.url $REMOTE/$name.git
   done
