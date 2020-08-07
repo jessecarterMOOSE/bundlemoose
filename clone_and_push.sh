@@ -9,10 +9,10 @@
 # for best results, run in an empty, temp directory
 
 
-# location of bundles
+# location of bundles (TODO: make this an argument)
 BUNDLE_DIR="$HOME/projects/zips"
 
-# ssh remote for internal git server to push
+# ssh remote for internal git server to push (TODO: make this an argument)
 REMOTE=git@hpcgitlab.hpc.inl.gov:`whoami` 
 
 module load git

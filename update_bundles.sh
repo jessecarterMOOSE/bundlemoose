@@ -9,7 +9,7 @@
 # note: this needs the 'lastbundle' tag to know where to update from, and will exit if not present
 # can be set with `git tag -f lastbundle [<commit>]` where the commit is optional and will default to HEAD
 
-# location to write bundle files
+# location to write bundle files (TODO: make this an argument)
 BUNDLE_DIR="$HOME/projects/zips"
 
 # check moose directory is present

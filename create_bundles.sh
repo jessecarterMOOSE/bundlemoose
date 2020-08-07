@@ -11,7 +11,7 @@
 # before running, set BUNDLE_DIR for your system
 
 
-# location to write bundle files
+# location to write bundle files (TODO: make this an argument, making the current directory the default)
 BUNDLE_DIR="$HOME/projects/zips"
 rm -vf $BUNDLE_DIR/*.bundle  # clean old bundles
 
