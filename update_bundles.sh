@@ -1,12 +1,23 @@
 #!/bin/bash
 
+# this script creates updated bundles from the last time moose repos were updated
+#
+# to be run on *external* server
+#
+# ensure the REMOTE and BUNDLE_DIR variables are correct
+#
+# for best results, run in an empty, temp directory
+
+# ssh remote for internal git server to push
+REMOTE=git@hpcgitlab.hpc.inl.gov:`whoami`
+
 # location for bundles
 BUNDLE_DIR="$HOME/projects/zips"
 rm -vf $BUNDLE_DIR/*.bundle  # clean old bundles
 
 # remember where we were last time
+git clone -b master $REMOTE/moose.git
 cd moose
-git checkout master
 git reset --hard lastbundle
 git submodule update --init --recursive libmesh
 git submodule foreach --recursive 'git tag -f lastbundle HEAD'

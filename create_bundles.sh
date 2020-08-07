@@ -1,5 +1,13 @@
 #!/bin/bash
 
+# this script creates some *initial* bundles of moose and its submodules that can be transferred to an offline network containing
+# a git server (Gitlab, TFS, etc...) and clone which reproduces the entire git history
+#
+# to be run on *external* server
+#
+# for best results, run in an empty, temp directory as the script leaves a separate repo each submodule and won't be left in a state
+# where `git submodule` works due to the url's used in the repos (see initialize_moose.sh script)
+
 # location for bundles
 BUNDLE_DIR="$HOME/projects/zips"
 rm -vf $BUNDLE_DIR/*.bundle  # clean old bundles
@@ -33,3 +41,5 @@ dir=$BUNDLE_DIR git submodule foreach --recursive '
     git bundle create $bundle master HEAD $extrabranch;
     echo;
   fi'
+
+# bundles can now be transferred over to the internal network, ideally to be cloned using the 'clone_and_push.sh' script

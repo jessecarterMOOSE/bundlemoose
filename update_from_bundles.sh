@@ -1,5 +1,14 @@
 #!/bin/bash
 
+# takes updated git bundles and updates existing internal repos and pushes changes to the internal git server
+#
+# to be run on *internal* server
+#
+# first ensure BUNDLE_DIR and REMOTE variables are correct
+#
+# for best results, run in an empty, temp directory
+
+
 # location of bundles
 BUNDLE_DIR="$HOME/projects/zips"
 
