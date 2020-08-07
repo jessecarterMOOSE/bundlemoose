@@ -7,8 +7,11 @@
 #
 # for best results, run in an empty, temp directory as the script leaves a separate repo each submodule and won't be left in a state
 # where `git submodule` works due to the url's used in the repos (see initialize_moose.sh script)
+#
+# before running, set BUNDLE_DIR for your system
 
-# location for bundles
+
+# location to write bundle files
 BUNDLE_DIR="$HOME/projects/zips"
 rm -vf $BUNDLE_DIR/*.bundle  # clean old bundles
 
