@@ -8,8 +8,6 @@
 # ssh remote for internal git server
 REMOTE=git@github.com:jessecarterMOOSE
 
-module load git
-
 # clone moose and initialize libmesh
 git clone $REMOTE/moose.git
 cd moose

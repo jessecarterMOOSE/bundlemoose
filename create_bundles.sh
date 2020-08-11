@@ -38,10 +38,11 @@ dir=$BUNDLE_DIR git submodule foreach --recursive '
     git branch -f master origin/master;
     if ! `git branch --contains HEAD | grep -q master`; then
       git checkout -t `git branch -a --contains HEAD | grep -v HEAD`
-      extrabranch=`git branch --show-current`;
+      extrabranch=`git rev-parse --abbrev-ref HEAD`;
     fi
     echo "writing $bundle...";
     git bundle create $bundle master HEAD $extrabranch;
+    unset extrabranch;
     echo;
   fi'
 

@@ -15,8 +15,6 @@ BUNDLE_DIR="$HOME/bundles"
 # ssh remote for internal git server to push (TODO: make this an argument)
 REMOTE=git@github.com:jessecarterMOOSE
 
-module load git
-
 # loop over bundle files, clone exiting repo, then update and push
 for bundle in $BUNDLE_DIR/*.bundle
 do
