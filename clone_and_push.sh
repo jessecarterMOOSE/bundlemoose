@@ -10,7 +10,7 @@
 
 
 # location of bundles (TODO: make this an argument)
-BUNDLE_DIR="$HOME/projects/zips"
+BUNDLE_DIR="$HOME/bundles"
 
 # ssh remote for internal git server to push (TODO: make this an argument)
 REMOTE=git@hpcgitlab.hpc.inl.gov:`whoami` 

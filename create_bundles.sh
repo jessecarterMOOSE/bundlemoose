@@ -12,7 +12,7 @@
 
 
 # location to write bundle files (TODO: make this an argument, making the current directory the default)
-BUNDLE_DIR="$HOME/projects/zips"
+BUNDLE_DIR="$HOME/bundles"
 rm -vf $BUNDLE_DIR/*.bundle  # clean old bundles
 
 # clone moose and initialize libmesh and submodules (don't worry about submodules of moose for now)

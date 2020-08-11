@@ -10,7 +10,7 @@
 # can be set with `git tag -f lastbundle [<commit>]` where the commit is optional and will default to HEAD
 
 # location to write bundle files (TODO: make this an argument)
-BUNDLE_DIR="$HOME/projects/zips"
+BUNDLE_DIR="$HOME/bundles"
 
 # check moose directory is present
 if [ ! -d "moose" ]; then echo "run from directory that contains 'moose' directory'"; exit 1; fi
