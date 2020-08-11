@@ -2,7 +2,7 @@
 
 # this script creates updated bundles from the last time moose repos were updated
 #
-# to be run on *external* server, from directory which contains moose
+# to be run on *external* network, from directory which contains moose
 #
 # ensure the BUNDLE_DIR variable is correct for your system
 #

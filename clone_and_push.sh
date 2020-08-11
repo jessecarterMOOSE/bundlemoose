@@ -2,7 +2,7 @@
 
 # takes git bundles and clones and pushes them to an internal git server
 #
-# to be run on *internal* server
+# to be run on *internal* network
 #
 # first ensure BUNDLE_DIR and REMOTE variables are correct
 #
@@ -22,7 +22,7 @@ do
   git clone -b master $bundle $name
   cd $name
 
-  # as submodule, repo may not point at master, so make sure we checkout and push extra branches
+  # if a submodule, repo may not point at master, so make sure we checkout and push extra branches in bundle
   for branch in `git branch -r | grep -vE 'HEAD|master'`  # loop over remote branches that are not HEAD or master
   do
     git branch -f ${branch#origin/} $branch
@@ -30,11 +30,10 @@ do
   # rename remotes, leave the "bundle" remote so we can pull from again later
   git remote rename origin bundle
   git remote add origin $REMOTE/$name.git
-  # make sure master is tracking origin so submodules pull from it
-  git branch master -u origin/master
   # push branches and tags
-  git push -f origin --all
-  git push -f origin --tags
+  git push -u origin --all
+  git push -u origin --tags
+
   cd ..
   echo
 done

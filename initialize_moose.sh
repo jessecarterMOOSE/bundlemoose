@@ -9,7 +9,7 @@
 REMOTE=git@github.com:jessecarterMOOSE
 
 # clone moose and initialize libmesh
-git clone $REMOTE/moose.git
+git clone -b master $REMOTE/moose.git
 cd moose
 git submodule init libmesh  # initialize repo so it gets an entry in local config file (.git/config)
 git config --local submodule.libmesh.url $REMOTE/libmesh.git  # change libmesh url in local repo config

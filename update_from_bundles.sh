@@ -2,7 +2,7 @@
 
 # takes updated git bundles and updates existing internal repos and pushes changes to the internal git server
 #
-# to be run on *internal* server
+# to be run on *internal* network
 #
 # first ensure BUNDLE_DIR and REMOTE variables are correct
 #
@@ -32,7 +32,7 @@ do
   # create any new branches contained in bundle
   for branch in `git branch -r | grep bundle | grep -vE 'HEAD|master'`
   do
-    git branch -f ${branch#origin/} $branch
+    git branch -f ${branch#bundle/} $branch
   done
 
   # push branches and tags
