@@ -13,7 +13,7 @@
 BUNDLE_DIR="$HOME/bundles"
 
 # ssh remote for internal git server to push (TODO: make this an argument)
-REMOTE=git@hpcgitlab.hpc.inl.gov:`whoami` 
+REMOTE=git@github.com:jessecarterMOOSE
 
 module load git
 

@@ -6,7 +6,7 @@
 # with more thought I could come up with some slick recursive algorithm, but this works for now
 
 # ssh remote for internal git server
-REMOTE=git@hpcgitlab.hpc.inl.gov:`whoami`
+REMOTE=git@github.com:jessecarterMOOSE
 
 module load git
 
