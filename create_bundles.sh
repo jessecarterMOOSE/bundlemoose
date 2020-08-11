@@ -31,15 +31,15 @@ git bundle create $bundle master HEAD lastbundle
 # bundle up submodules, but skip if bundle already exists (libmesh submodules use a common submodle for configuration stuff)
 # also if submodule HEAD isn't on master, need to grab that branch too
 dir=$BUNDLE_DIR git submodule foreach --recursive '
-  repo=`basename $name`; 
+  repo=`basename $name`;
   bundle=$dir/$repo.bundle;
   if [ ! -f $bundle ]; then
     git checkout --detach;
     git branch -f master origin/master;
-    if ! `git branch --contains HEAD | grep -q master`; then 
+    if ! `git branch --contains HEAD | grep -q master`; then
       git checkout -t `git branch -a --contains HEAD | grep -v HEAD`
-      extrabranch=`git branch --show-current`; 
-    fi 
+      extrabranch=`git branch --show-current`;
+    fi
     echo "writing $bundle...";
     git bundle create $bundle master HEAD $extrabranch;
     echo;

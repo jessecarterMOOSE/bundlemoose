@@ -35,7 +35,7 @@ do
   for branch in `git branch -r | grep bundle | grep -vE 'HEAD|master'`
   do
     git branch -f ${branch#origin/} $branch
-  done  
+  done
 
   # push branches and tags
   git push origin --all
